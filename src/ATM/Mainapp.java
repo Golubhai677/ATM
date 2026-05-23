@@ -2,11 +2,9 @@ package ATM;
 
 public class Mainapp {
     public static void main(){
-        BankAccount account = new BankAccount();
-
-        account.acHolderName = "sidharth";
-        account.balance = 2344;
-
-        System.out.println(account.acHolderName);
+        Bank b1 = new Bank();
+        for(int i = 0; i < 2; i++){
+            b1.accounts[i].check();
+        }
     }
 }
