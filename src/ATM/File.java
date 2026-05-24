@@ -1,39 +1,34 @@
 package ATM;
 import java.io.*;
 public class File {
-    //public static class Input {
-    public static void input(String m) {
+
+    public void input(String account) {
         try (FileWriter writer = new FileWriter("test.txt")) {
-            writer.write(m);
+            writer.write(account);
             System.out.println("file has been written");
         } catch (IOException e) {
             System.out.println("Could not write file");
         }
     }
-    public static String output(int x) {
+    public static String output(int Account_no) {
         try(BufferedReader reader=new BufferedReader(new FileReader("test.txt"))){
             System.out.println("That file exits");
-            String line,line2;
-//                line= reader.readLine();
-//                String arr[]=line.split(" ");
+            String line;
             for(int i=0;i<2;i++) {
                 line= reader.readLine();
                 String arr[]=line.split(" ");
                 int num = Integer.parseInt(arr[3]);
-                if(x==num){
+                if(Account_no==num){
                     System.out.println("number found");
                     return line;
                 }
-                //System.out.println(arr[0]);
             }
 
         }
         catch(IOException e){
             System.out.println("something wrong");
         }
-        return "0";
+        return null;
     }
-
-    //}
 }
 
