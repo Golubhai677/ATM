@@ -1,12 +1,13 @@
 package ATM;
 
-public class BankAccount {
+public class Account {
     int acNumber;
     String acHolderName;
     int pin;
     double balance;
+    int cardNumber;
 
-    BankAccount(String acHolderName, int acNumber, int pin, double balance){
+    Account(String acHolderName, int acNumber, int pin, double balance){
         this.acHolderName = acHolderName;
         this.acNumber = acNumber;
         this.pin = pin;

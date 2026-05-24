@@ -2,7 +2,7 @@ package ATM;
 
 public class User {
     int cardNumber;
-    BankAccount account;
+    Account account;
 
     void login(){
 
