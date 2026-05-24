@@ -6,7 +6,10 @@ public class Mainapp {
 //    Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args){
-        Bank b1 = new Bank();
+//        Bank b1 = new Bank();
+        Atm atm = new Atm();
+
+        atm.start();
 //        for(int i = 0; i < 2; i++){
 //            b1.accounts[i].check();
 //        }
