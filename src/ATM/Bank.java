@@ -22,17 +22,15 @@ public class Bank {
 
     Account loadData(int cardno){
         for(Account account : accounts){
-            if(account.cardNumber == cardno){
-                return account;
-            }
+            if(account.cardNumber == cardno) return account;
         }
         return null;
     }
 
-    boolean findAccount(int accountNo){
+    Account findAccount(int accountNo){
         for(Account account : accounts){
-            if(account.acNumber == accountNo) return true;
+            if(account.acNumber == accountNo) return account;
         }
-        return false;
+        return null;
     }
 }

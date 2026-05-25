@@ -18,24 +18,27 @@ public class Gui{
         }
     }
 
-    void registrationPage(Bank bank, Account account){
-//        Bank bank = new Bank();
+    void registrationPage(Bank bank){
 
         System.out.print("Enter A/c Number: ");
-        if(bank.findAccount(scanner.nextInt())){
-            System.out.print("Set Pin: ");
-            account.pin = scanner.nextInt();
+        Account account = new Account(bank.findAccount(scanner.nextInt()));
 
-            System.out.println("Generating Card Number...");
-            account.cardNumber = bank.generateCard();
+        account.printDetails();
 
-            System.out.println("Your Card Number is: " + account.cardNumber);
-            System.out.println("Your Pin is: " + account.pin);
-
-        }
-        else{
-            System.out.println("Account number not found!");
-        }
+//        if(account){
+//            System.out.print("Set Pin: ");
+//            account.pin = scanner.nextInt();
+//
+//            System.out.println("Generating Card Number...");
+//            account.cardNumber = bank.generateCard();
+//
+//            System.out.println("Your Card Number is: " + account.cardNumber);
+//            System.out.println("Your Pin is: " + account.pin);
+//
+//        }
+//        else{
+//            System.out.println("Account number not found!");
+//        }
     }
 
     void printAcDetails(Bank b1){
