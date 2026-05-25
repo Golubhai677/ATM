@@ -13,6 +13,14 @@ public class Account {
         this.balance = balance;
     }
 
+    Account(Account account){
+        this.acHolderName = account.acHolderName;
+        this.acNumber = account.acNumber;
+        this.balance = account.balance;
+        this.cardNumber = account.cardNumber;
+        this.pin = account.pin;
+    }
+
     void printDetails(){
         System.out.println("your'e welcome " + acHolderName);
         System.out.println("Ac Number: " + acNumber);

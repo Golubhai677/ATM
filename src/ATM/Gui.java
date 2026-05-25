@@ -10,8 +10,6 @@ public class Gui{
         System.out.print("Enter Card number: ");
         int cardno = scanner.nextInt();
         if(bank.isAvailable(cardno)){
-            //here we load the Account data related to the Card number from the Bank class method named "loadData".
-            //maybe it is wrong
             return cardno;
         }
         else{

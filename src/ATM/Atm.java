@@ -20,15 +20,15 @@ public class Atm {
 
         int cardno = gui.loginPage(bank);
         System.out.println("Card no: " + cardno);
-//        if(cardno != 0){
-//            bank.loadData(currentUser.account, cardno);
-//        }
+        if(cardno != 0){
+            currentUser.account = new Account(bank.loadData(cardno));
+        }
 
-        System.out.println("currentUser Acno: " + currentUser.account);
-        System.out.println("currentUser AcH: " + currentUser.account);
-//        System.out.println("currentUser Ac bal: " + currentUser.account.balance);
-//        System.out.println("currentUser Card: " + currentUser.account.cardNumber);
-//        System.out.println("currentUser Pin: " + currentUser.account.pin);
+        System.out.println("currentUser Acno: " + currentUser.account.acNumber);
+        System.out.println("currentUser AcH: " + currentUser.account.acHolderName);
+        System.out.println("currentUser Ac bal: " + currentUser.account.balance);
+        System.out.println("currentUser Card: " + currentUser.account.cardNumber);
+        System.out.println("currentUser Pin: " + currentUser.account.pin);
 //        System.out.println("currentUser " + );
     }
 }
