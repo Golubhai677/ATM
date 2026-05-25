@@ -6,14 +6,22 @@ public class Gui{
     Scanner scanner = new Scanner(System.in);
     int cardNo;
 
-    int loginPage(){
+    int loginPage(Bank bank){
         System.out.print("Enter Card number: ");
-        cardNo = scanner.nextInt();
-        return cardNo;
+        int cardno = scanner.nextInt();
+        if(bank.isAvailable(cardno)){
+            //here we load the Account data related to the Card number from the Bank class method named "loadData".
+            //maybe it is wrong
+            return cardno;
+        }
+        else{
+            System.out.println("ERROR: Card number not found!");
+            return 0;
+        }
     }
 
-    void registrationPage(Account account){
-        Bank bank = new Bank();
+    void registrationPage(Bank bank, Account account){
+//        Bank bank = new Bank();
 
         System.out.print("Enter A/c Number: ");
         if(bank.findAccount(scanner.nextInt())){
@@ -26,7 +34,6 @@ public class Gui{
             System.out.println("Your Card Number is: " + account.cardNumber);
             System.out.println("Your Pin is: " + account.pin);
 
-//            account.assignCard(account.cardNumber, account.pin);
         }
         else{
             System.out.println("Account number not found!");

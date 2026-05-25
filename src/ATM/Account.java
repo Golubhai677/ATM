@@ -13,11 +13,6 @@ public class Account {
         this.balance = balance;
     }
 
-//    void assignCard(int cardNumber, int pin){
-//        this.cardNumber = cardNumber;
-//        this.pin = pin;
-//    }
-
     void printDetails(){
         System.out.println("your'e welcome " + acHolderName);
         System.out.println("Ac Number: " + acNumber);
