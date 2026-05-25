@@ -8,6 +8,7 @@ public class Bank {
 
     Account[] accounts = {ac1, ac2};
 
+
     int generateCard(){
         return cardno++;
     }
