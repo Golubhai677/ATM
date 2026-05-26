@@ -13,7 +13,25 @@ public class Atm {
 
         gui.printAcDetails(bank);
 
-        gui.registrationPage(bank);
+        //login page
+        int cardNum = gui.loginPage();
+        if(bank.isAvailable(cardNum) && cardNum != 0){
+            currentUser.account = new Account(bank.loadData(cardNum));
+        }
+        else{
+            gui.throwError("Card not Available!");
+        }
+
+        //registration page
+        int acNum = gui.registrationPage();
+        if(bank.findAccount(acNum)){
+
+        }
+        else{
+            gui.throwError("A/c not found!");
+        }
+
+//        gui.registrationPage(bank);
 //        gui.registrationPage(bank, bank.ac2);
 
 //        gui.printAcDetails(bank);

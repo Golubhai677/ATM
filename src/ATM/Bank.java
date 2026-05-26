@@ -27,10 +27,10 @@ public class Bank {
         return null;
     }
 
-    Account findAccount(int accountNo){
+    boolean findAccount(int accountNo){
         for(Account account : accounts){
-            if(account.acNumber == accountNo) return account;
+            if(account.acNumber == accountNo) return true;
         }
-        return null;
+        return false;
     }
 }
