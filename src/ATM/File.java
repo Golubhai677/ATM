@@ -18,12 +18,14 @@ public class File {
         try(BufferedReader reader=new BufferedReader(new FileReader("src//ATM//test.txt"))){
             System.out.println("That file exits");
             String line;
-
-            for(int i=0;i<1;i++) {
-                line= reader.readLine();
+            int i=0;
+            while((line=reader.readLine())!=null) {
+                //line= reader.readLine();
+                i++;
                 String[] arr=line.split(" ");
 
                 int num = Integer.parseInt(arr[0]);
+
 
                 if(account_no==num){
                     System.out.println("number found");
