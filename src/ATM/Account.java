@@ -27,7 +27,6 @@ public class Account {
         System.out.println("Balance: " + balance);
         System.out.println("Card Number: " + cardNumber);
         System.out.println("Pin: " + pin);
-
     }
 
     void withdraw(double amount){
