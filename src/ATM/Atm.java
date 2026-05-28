@@ -11,15 +11,15 @@ public class Atm {
         Bank bank = new Bank();
         Gui gui = new Gui();
 
-        gui.printAcDetails(bank);
+        //gui.printAcDetails(bank);
 
         //login page
-        int cardNum = gui.loginPage();
+        //int cardNum = gui.loginPage();
         if(bank.isAvailable(cardNum) && cardNum != 0){
             currentUser.account = new Account(bank.loadData(cardNum));
         }
         else{
-            gui.throwError("Card not Available!");
+           // gui.throwError("Card not Available!");
         }
 
         //registration page
