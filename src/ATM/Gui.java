@@ -1,30 +1,18 @@
-//package ATM;
+package ATM;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 public class Gui extends JFrame implements ActionListener
 {
-    // Scanner scanner = new Scanner(System.in);
-    // int cardNo;
-
-    // int loginPage(Bank bank){
-    //     System.out.print("Enter Card number: ");
-    //     int cardno = scanner.nextInt();
-    //     if(bank.isAvailable(cardno)){
-    //         return cardno;
-    //     }
-    //     else{
-    //         System.out.println("ERROR: Card number not found!");
-    //         return 0;
-    //     }
-    // }
      JTextField Text;
     JButton[] numButtons = new JButton[10];
     JButton eq, back,left,right;
     String s0="",s1="",s2="";
     JLabel card;
-     Gui()
-    {
+
+
+     Gui(){
         setLayout(new FlowLayout());
         setTitle("ATM");
         //setSize(300, 400);//does not work 
