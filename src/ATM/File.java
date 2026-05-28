@@ -5,7 +5,7 @@ public class File {
 
     public void input(String account) {
 
-        try (FileWriter writer = new FileWriter("src//ATM//test.txt",true)) {
+        try (FileWriter writer = new FileWriter("src//ATM//accounts.txt",true)) {
             writer.write(account+"\n");
             System.out.println("file has been written");
         } catch (IOException e) {
@@ -15,7 +15,7 @@ public class File {
 
     public String output(int account_no) {
 
-        try(BufferedReader reader=new BufferedReader(new FileReader("src//ATM//test.txt"))){
+        try(BufferedReader reader=new BufferedReader(new FileReader("src//ATM//accounts.txt"))){
             System.out.println("That file exits");
             String line;
             int i=0;
