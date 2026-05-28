@@ -20,4 +20,21 @@ public class Gui {
         System.out.println("Card Number: " + account.cardNumber);
         System.out.println("Pin: " + account.pin);
     }
+
+    int setPinPage(){
+        int enteredPin;
+
+        while(true){
+            System.out.print("Enter your pin: ");
+            enteredPin = scanner.nextInt();
+            System.out.print("Confirm pin: ");
+
+            if(enteredPin == scanner.nextInt()){
+                return enteredPin;
+            }
+            else{
+                throwError("Invalid, Try again!");
+            }
+        }
+    }
 }

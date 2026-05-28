@@ -15,4 +15,8 @@ public class Account {
         System.out.println("Pin: " + pin);
     }
 
+    void setPin(int pin){
+        this.pin = pin;
+    }
+
 }

@@ -21,7 +21,14 @@ public class Atm {
         }
 
         //gui.showDetails(bank.accounts.get(currentUserIndex));
-        gui.showDetails(bank.account);
+//        gui.showDetails(bank.account);
+
+//        if(bank.accounts.get(currentUserIndex).pin == 0){
+//            gui.throwError("You are new User.");
+//            bank.accounts.get(currentUserIndex).setPin(gui.setPinPage());
+//        }
+//
+//        gui.showDetails(bank.accounts.get(currentUserIndex));
 
     }
 
