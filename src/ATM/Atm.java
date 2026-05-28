@@ -1,7 +1,7 @@
 package ATM;
 
 public class Atm {
-    int currentUserIndex;
+    //int currentUserIndex;
     int cardNum;
 
     void start(){
@@ -12,7 +12,7 @@ public class Atm {
         while(true){
             cardNum = gui.welcomeScreen();
             if(bank.isAvailable(cardNum) && cardNum != 0){
-                currentUserIndex = bank.getIndex(cardNum);
+                //currentUserIndex = bank.getIndex(cardNum);
                 break;
             }
             else{
@@ -20,7 +20,8 @@ public class Atm {
             }
         }
 
-        gui.showDetails(bank.accounts.get(currentUserIndex));
+        //gui.showDetails(bank.accounts.get(currentUserIndex));
+        gui.showDetails(bank.account);
 
     }
 

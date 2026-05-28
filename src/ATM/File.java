@@ -1,43 +1,71 @@
 package ATM;
 import java.io.*;
+import java.util.ArrayList;
 
 public class File {
 
-    public void input(String account) {
+    String filepath="src//ATM//accounts.txt";
+    ArrayList <Account> accounts=new ArrayList<>();
 
-        try (FileWriter writer = new FileWriter("src//ATM//accounts.txt",true)) {
-            writer.write(account+"\n");
-            System.out.println("file has been written");
-        } catch (IOException e) {
-            System.out.println("Could not write file");
+    String accountToString(Account account){
+        return account.acNumber + "," + account.acHolderName + "," + account.balance + "," + account.cardNumber + "," + account.pin;
+    }
+
+    Account stringToAccount(String rawData){
+        Account tempAc = new Account();
+
+        String[] arrOfData = rawData.split(",");
+
+        tempAc.acNumber = Integer.parseInt(arrOfData[0]);
+        tempAc.acHolderName = arrOfData[1];
+        tempAc.balance = Double.parseDouble(arrOfData[2]);
+        tempAc.cardNumber = Integer.parseInt(arrOfData[3]);
+        tempAc.pin = Integer.parseInt(arrOfData[4]);
+
+        return tempAc;
+    }
+
+    void writeData(ArrayList<Account> accounts){
+        try(FileWriter writer = new FileWriter(filepath)){
+
+            for(Account account : accounts){
+                writer.write(accountToString(account) + "\n");
+            }
+            System.out.println("File has been written.");
+        } catch(IOException e){
+            System.out.println("Couldn't load file!");
         }
     }
 
-    public String output(int account_no) {
-
-        try(BufferedReader reader=new BufferedReader(new FileReader("src//ATM//accounts.txt"))){
-            System.out.println("That file exits");
+    void readData(){
+        try(BufferedReader reader = new BufferedReader(new FileReader(filepath))){
             String line;
-            int i=0;
-            while((line=reader.readLine())!=null) {
-                //line= reader.readLine();
-                i++;
-                String[] arr=line.split(" ");
 
-                int num = Integer.parseInt(arr[0]);
-
-
-                if(account_no==num){
-                    System.out.println("number found");
-                    return line;
-                }
+            while((line = reader.readLine()) != null){
+                accounts.add(stringToAccount(line));
             }
 
+            System.out.println("Data retrieve Successfully.");
         }
         catch(IOException e){
             System.out.println("something wrong");
         }
+    }
+
+    int getIndex(int cardNum){
+        for(Account account : accounts){
+            if(account.cardNumber == cardNum) return accounts.indexOf(account);
+        }
+        return -1;
+    }
+
+    Account userAccount(int cardNum){
+        for(Account account : accounts){
+            if(account.cardNumber == cardNum) return account;
+        }
+
         return null;
     }
+
 }
 
