@@ -66,6 +66,12 @@ public class File {
 
         return null;
     }
+//    int getIndex2(int cardNum){
+//        for(Account account : accounts){
+//            if(account.cardNumber == cardNum) return accounts.indexOf(account);
+//        }
+//        return -1;
+//    }
 
 }
 
