@@ -19,4 +19,16 @@ public class Account {
         this.pin = pin;
     }
 
+    void withdraw(double amount){
+
+    }
+
+    void deposit(double amount){
+
+    }
+
+    void checkBalance(){
+
+    }
+
 }
